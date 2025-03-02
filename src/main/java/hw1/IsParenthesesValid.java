@@ -1,4 +1,4 @@
-package HW1;
+package hw1;
 
 import java.util.Stack;
 
@@ -10,8 +10,6 @@ class IsParenthesesValid {
             if (c == '(' || c == '{' || c == '[') {
                 stack.push(c); // Push opening brackets onto the stack
             } else {
-                if (stack.isEmpty()) return false; // No matching opening bracket
-
                 char top = stack.pop();
                 if ((c == ')' && top != '(') ||
                         (c == '}' && top != '{') ||
