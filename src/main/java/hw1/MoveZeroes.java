@@ -1,4 +1,4 @@
-package HW1;
+package hw1;
 
 class MoveZeroes {
     public void moveZeroes(int[] nums) {
