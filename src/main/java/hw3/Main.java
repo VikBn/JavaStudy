@@ -12,11 +12,12 @@ public class Main {
         UserValidator validator = new UserValidator();
         UserService userService = new UserServiceImpl(repository, validator);
 
-        UserRegistrationDto userDto = new UserRegistrationDto();
-        userDto.setEmail("test@example.com");
-        userDto.setPhoneNumber("1234567890");
-        userDto.setPassword("password123");
-        userDto.setRepeatPassword("password123");
+        UserRegistrationDto userDto = new UserRegistrationDto(
+                "test@example.com",   // email
+                "+1234567890",        // phone number
+                "password123",        // password
+                "password123"         // repeatPassword
+        );
 
         var registeredUser = userService.registerUser(userDto);
         System.out.println("Registered User: " + registeredUser);

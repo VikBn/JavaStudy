@@ -18,10 +18,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponseDto registerUser(UserRegistrationDto userRegistrationDto) {
         validator.validate(userRegistrationDto);
-        User user = new User();
-        user.setEmail(userRegistrationDto.getEmail());
-        user.setPhoneNumber(userRegistrationDto.getPhoneNumber());
-        user.setPassword(userRegistrationDto.getPassword());
+        User user = new User(null, userRegistrationDto.getEmail(),
+                userRegistrationDto.getPhoneNumber(), userRegistrationDto.getPassword());
         userRepository.save(user);
         return new UserResponseDto(user.getId(), user.getEmail(), user.getPhoneNumber());
     }
