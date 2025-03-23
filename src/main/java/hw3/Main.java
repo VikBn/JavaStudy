@@ -1,14 +1,14 @@
 package hw3;
 
 import hw3.dto.UserRegistrationDto;
-import hw3.repository.UserRepositoryJdbcImpl;
+import hw3.repository.UserRepositoryImpl;
 import hw3.service.UserService;
 import hw3.service.UserServiceImpl;
 import hw3.validation.UserValidator;
 
 public class Main {
     public static void main(String[] args) {
-        UserRepositoryJdbcImpl repository = new UserRepositoryJdbcImpl();
+        UserRepositoryImpl repository = new UserRepositoryImpl();
         UserValidator validator = new UserValidator();
         UserService userService = new UserServiceImpl(repository, validator);
 

@@ -5,8 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-
-public class UserRepositoryJdbcImpl implements UserRepository {
+public class UserRepositoryImpl implements UserRepository {
     private final Map<Long, User> database = new HashMap<>();
     private Long idCounter = 1L;
 

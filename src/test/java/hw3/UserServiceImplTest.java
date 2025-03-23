@@ -49,7 +49,7 @@ public class UserServiceImplTest {
         when(userRepository.findById(1L)).thenReturn(Optional.of(user));
 
         // Call the getUserById method
-        UserResponseDto userResponse = userService.getUserById(1L);
+        UserResponseDto userResponse = userService.getById(1L);
 
         // Assertions
         assertEquals(1L, userResponse.id());
